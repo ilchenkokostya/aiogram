@@ -1,1 +1,1 @@
-print('asdasdsa')
+print('asdasd****sa')

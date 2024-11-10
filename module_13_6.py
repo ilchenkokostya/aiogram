@@ -40,6 +40,7 @@ async def cancel_command(call, state: FSMContext):
         return
     await state.finish()
     await call.message.reply('Вы прервали заполнение данных!')
+    await call.answer()
 
 
 # ---=== ИНФО ===----
@@ -48,7 +49,8 @@ async def set_age(call):
     await call.message.answer(
         'Для женщин: (10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) − 161')
     await call.message.answer(
-        'Для мужчин: (10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) + 5')
+        'Для мужчин: (10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) + 5',
+        reply_markup=kb)
     await call.answer()
 
 
@@ -107,7 +109,7 @@ async def send_calories(message: types.Message, state: FSMContext):
     await message.answer(f"(Для мужчин) Ваша норма калорий: {calories} ккал в день")
 
     calories = int(10 * weight + 6.25 * growth - 5 * age - 161)
-    await message.answer(f"(Для женщин) Ваша норма калорий: {calories} ккал в день")
+    await message.answer(f"(Для женщин) Ваша норма калорий: {calories} ккал в день", reply_markup=kb)
 
     await state.finish()
 

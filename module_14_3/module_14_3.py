@@ -67,13 +67,13 @@ async def cancel_command(call, state: FSMContext):
 
 @dp.callback_query_handler(text=['Купить'])
 async def get_buying_list(call):
-    with open('img/original_fcb01214-ed67-439a-a77d-d069f8232fe8.webp', "rb") as product_1:
+    with open('module_14_3/img/original_fcb01214-ed67-439a-a77d-d069f8232fe8.webp', "rb") as product_1:
         await call.message.answer_photo(product_1, f"Название: Product1 | Описание: Доппельгерц актив | Цена: {1 * 100}")
-    with open("img/original_140d6fb0-b244-4148-a706-eaf41c723fe6.webp", "rb") as product_2:
+    with open("module_14_3/img/original_140d6fb0-b244-4148-a706-eaf41c723fe6.webp", "rb") as product_2:
         await call.message.answer_photo(product_2, f"Название: Product2 | Описание: Турбослим Альфа | Цена: {2 * 100}")
-    with open("img/3398097.jpg", "rb") as product_3:
+    with open("module_14_3/img/3398097.jpg", "rb") as product_3:
         await call.message.answer_photo(product_3, f"Название: Product3 | Описание: BIOSPHIN | Цена: {3 * 100}")
-    with open("img/original_d4d20c05-5310-4151-b431-505b06538ee3.webp", "rb") as product_4:
+    with open("module_14_3/img/original_d4d20c05-5310-4151-b431-505b06538ee3.webp", "rb") as product_4:
         await call.message.answer_photo(product_4, f"Название: Product4 | Описание: Грин Слим | Цена: {4 * 100}")
     await call.message.answer("Выберите продукт для покупки:", reply_markup=kb3)
     await call.answer()
